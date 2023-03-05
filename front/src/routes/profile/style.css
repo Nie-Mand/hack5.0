@@ -1,0 +1,79 @@
+.payment-methods {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .payment-methods:after {
+    content: "";
+    clear: both;
+  }
+  
+  .payment-method {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    float: left;
+    height: 70px;
+    position: relative;
+    width: 120px;
+  }
+  
+  .payment-method + .payment-method {
+    margin-left: 25px;
+  }
+  
+  
+  /* label fique por cima do radio button. Para fazer isso, vamos adicionar uma cor de fundo e posicionar o elemento */
+  .payment-method label {
+    background: #fff no-repeat center center;
+    bottom: 1px;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    left: 1px;
+    position: absolute;
+    right: 1px;
+    text-indent: 100%;
+    top: 1px;
+    white-space: nowrap;
+  }
+  
+  .pagseguro label {
+    background-image: url(https://www.paymee.tn/wp-content/uploads/2022/02/Plan-de-travail-2.png);
+    background-size: 90px;
+  }
+  
+  .paypal label {
+    background-image: url(https://static.springbuilder.site/fs/userFiles-v2/tunisiabet-1875858/uploaded-media/clicktopay.png);
+    background-size: 100px;
+  }
+  
+  .bankslip label {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Stripe_Logo%2C_revised_2016.svg/2560px-Stripe_Logo%2C_revised_2016.svg.png);
+    background-size: 70px;
+  }
+  
+  /* Agora, vamos fazer o elemento ser destacado quando é focado. Para isso nós iremos usar o pseudo-seletor :focus e :hover. */
+  .payment-methods input:hover + label,
+  .payment-methods input:focus + label{
+    outline: 4px solid #36AF72;
+  }
+  
+  /* Para fazer o elemento selecionado ser marcado, basta adicionar uma regra semelhante usando o pseudo-seletor :checked. */
+  .payment-methods input:checked + label {
+    outline: 4px solid #36AF72;
+  }
+  
+  /* Só falta definir o ícone de “checked”. Para fazer isso, vamos definir um pseudo-elemento com uma imagem de fundo. */
+  .payment-methods input:checked + label:after {
+    background: url(https://lh3.google.com/u/0/d/0B4z-wUXuqP56SUtBYmExbkowelk=w2560-h1380-iv1);
+    background-size: cover;
+    background-color: #36AF72;
+    bottom: -1px;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    right: -1px;
+    width: 20px;
+  }
